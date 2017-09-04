@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Broadcasting</title>
+
+    <script src="angular_1.6.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="app">
+    <div ng-controller="firstCtrl" style="border:2px solid #E75D5C; padding:5px;">
+        <h1>Parent Controller</h1>
+        <p>Emit Message : {{message}}</p>
+        <br />
+        <div ng-controller="secondCtrl" style="border:2px solid #428bca;padding:5px;">
+            <h1>Child Controller</h1>
+            <input ng-model="msg">
+            <button ng-click="handleClick(msg);">Emit</button>
+        </div>
+    </div>
+    <P>--------------------------------Broadcasting--------------------------------------------</P>
+    <div ng-controller="firstCtrl" style="border:2px solid #E75D5C; padding:5px;">
+        <h1>Parent Controller</h1>
+        <input ng-model="msg">
+        <button ng-click="handleClick(msg);">Broadcast</button>
+        <br /><br />
+        <div ng-controller="secondCtrl" style="border:2px solid #428bca;padding:5px;">
+            <h1>Child Controller</h1>
+            <p>Broadcast Message : {{message}}</p>
+        </div>
+    </div>
+</body>
+
+</html>
